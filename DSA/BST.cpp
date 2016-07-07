@@ -83,7 +83,7 @@ int BST::kthGreater( BSTNode* currentNode, int k ){
 
 		greater = this->kthGreater(currentNode->right, k);
 
-		if( greater == NULL ){ // its right leaf node
+		if( greater == NULL ){ // its rightest node probably the answer, lets check
 
 			if( returnCount == k ){ // got answer
 
