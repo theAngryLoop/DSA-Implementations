@@ -69,6 +69,53 @@ bool BST::search( int val ){
 	return this->search(this->rootPtr, val);
 }
 
+int BST::kthGreater( BSTNode* currentNode, int k ){
+
+	static int returnCount = 0;
+	int greater = NULL;
+
+	if( currentNode == NULL ){ // not a node, return
+
+		returnCount++;
+		return NULL;
+	}
+	else{
+
+		greater = this->kthGreater(currentNode->right, k);
+
+		if( greater == NULL ){ // its right leaf node
+
+			if( returnCount == k ){ // got answer
+
+				returnCount = 0;
+				return currentNode->value;
+			}
+			else if(currentNode->left != NULL){ // go left, if left node available
+
+				greater = this->kthGreater(currentNode->left, k );
+				
+				// nothing found there
+				if(greater == NULL) returnCount++;
+
+				return greater;
+			}
+			else{ // no left node, return back, count this return
+
+				return NULL;
+			}
+		}
+		else{ // already got answer
+
+			return greater;
+		}
+	}
+}
+
+int BST::kthGreater( int k ){
+
+	return this->kthGreater(this->rootPtr, k);
+}
+
 void BST::empty( BSTNode *root ){
 
 	if( root == NULL ){ // already null, return back
