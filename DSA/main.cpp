@@ -17,7 +17,7 @@ int main(){
 	b.insert(30);
 	b.insert(15);
 
-	cout << b.kthGreater(3) << endl;
+	cout << b.kthGreater(2) << endl;
 
 	cin.ignore();
 }

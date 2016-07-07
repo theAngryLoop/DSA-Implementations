@@ -93,14 +93,13 @@ int BST::kthGreater( BSTNode* currentNode, int k ){
 			else if(currentNode->left != NULL){ // go left, if left node available
 
 				greater = this->kthGreater(currentNode->left, k );
-				
-				// nothing found there
-				if(greater == NULL) returnCount++;
 
+				// no increment here, already counted
 				return greater;
 			}
 			else{ // no left node, return back, count this return
 
+				returnCount++;
 				return NULL;
 			}
 		}
