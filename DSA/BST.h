@@ -12,6 +12,9 @@ class BST{
 	bool search( BSTNode*, int );
 	int kthGreater( BSTNode*, int );
 	int getHeight( BSTNode* );
+	void printPreOrder( BSTNode* );
+	void printInOrder( BSTNode* );
+	void printPostOrder( BSTNode* );
 	void empty( BSTNode* );
 
 public:
@@ -21,5 +24,8 @@ public:
 	bool search( int );
 	int kthGreater( int );
 	int getHeight();
+	void printPreOrder();
+	void printInOrder();
+	void printPostOrder();
 	~BST();
 };

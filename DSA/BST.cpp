@@ -138,6 +138,76 @@ int BST::getHeight(){
 	return this->getHeight(this->rootPtr);
 }
 
+void BST::printPreOrder( BSTNode* node ){
+
+	if( node == NULL ){ // no further nodes, return back
+
+		return;
+	}
+	else{
+
+		// print current
+		cout << node->value << " ";
+
+		// print preorder of left tree
+		this->printPreOrder(node->left);
+		// print preorder of right tree
+		this->printPreOrder(node->right);
+	}
+}
+
+void BST::printPreOrder(){
+
+	this->printPreOrder(this->rootPtr);
+}
+
+void BST::printInOrder( BSTNode* node ){
+
+	if( node == NULL ){ // no further nodes, return back
+
+		return;
+	}
+	else{
+
+		// print in order of left tree
+		this->printInOrder(node->left);
+
+		// print current
+		cout << node->value << " ";
+
+		// print in order of right tree
+		this->printInOrder(node->right);
+	}
+}
+
+void BST::printInOrder(){
+
+	this->printInOrder(this->rootPtr);
+}
+
+void BST::printPostOrder( BSTNode* node ){
+
+	if( node == NULL ){ // no further nodes, return back
+
+		return;
+	}
+	else{
+
+		// print post order of left tree
+		this->printPostOrder(node->left);
+		// print post order of right tree
+		this->printPostOrder(node->right);
+
+		// print current
+		cout << node->value << " ";
+	}
+}
+
+void BST::printPostOrder(){
+
+	this->printPostOrder(this->rootPtr);
+}
+
 void BST::empty( BSTNode *root ){
 
 	if( root == NULL ){ // already null, return back

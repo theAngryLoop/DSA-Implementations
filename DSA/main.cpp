@@ -17,7 +17,11 @@ int main(){
 	b.insert(30);
 	b.insert(15);
 
-	cout << b.getHeight() << endl;
+	b.printPreOrder();
+	cout << endl;
+	b.printPostOrder();
+	cout << endl;
+	b.printInOrder();
 
 	cin.ignore();
 }
