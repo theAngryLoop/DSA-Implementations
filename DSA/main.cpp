@@ -22,6 +22,8 @@ int main(){
 	b.printPostOrder();
 	cout << endl;
 	b.printInOrder();
+	cout << endl;
+	b.printLevelOrder();
 
 	cin.ignore();
 }

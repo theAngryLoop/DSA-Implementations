@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue> // for level-order traversal
 #include "BST.h"
 
 using namespace std;
@@ -206,6 +207,40 @@ void BST::printPostOrder( BSTNode* node ){
 void BST::printPostOrder(){
 
 	this->printPostOrder(this->rootPtr);
+}
+
+void BST::printLevelOrder( BSTNode* node ){
+
+	if( node == NULL ){ // empty
+
+		return;
+	}
+	else{ // lets play
+
+		queue<BSTNode*> q;
+		
+		q.push(node);
+
+		while(!q.empty()){ // while queue is not empty
+
+			node = q.front();
+
+			// print this node
+			cout << node->value << " ";
+
+			// if have left child or right child, push 'em
+			if(node->left != NULL) q.push(node->left);
+			if(node->right != NULL) q.push(node->right);
+
+			// pop from front, the done node
+			q.pop();
+		}
+	}
+}
+
+void BST::printLevelOrder(){
+
+	this->printLevelOrder(this->rootPtr);
 }
 
 void BST::empty( BSTNode *root ){

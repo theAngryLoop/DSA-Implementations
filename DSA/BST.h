@@ -15,6 +15,7 @@ class BST{
 	void printPreOrder( BSTNode* );
 	void printInOrder( BSTNode* );
 	void printPostOrder( BSTNode* );
+	void printLevelOrder( BSTNode* );
 	void empty( BSTNode* );
 
 public:
@@ -27,5 +28,6 @@ public:
 	void printPreOrder();
 	void printInOrder();
 	void printPostOrder();
+	void printLevelOrder();
 	~BST();
 };
