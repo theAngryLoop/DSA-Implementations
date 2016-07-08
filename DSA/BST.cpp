@@ -243,6 +243,32 @@ void BST::printLevelOrder(){
 	this->printLevelOrder(this->rootPtr);
 }
 
+bool BST::isBST( BSTNode* node ){
+
+	if(node == NULL){
+
+		return true;
+	}
+	else{
+
+		bool leftRightTreesOK = this->isBST(node->left) && this->isBST(node->right);
+		bool currentTreeOK = true;
+
+		if( (node->left != NULL && node->value < node->left->value) ||
+			(node->right != NULL && node->value > node->right->value) ){
+
+			currentTreeOK = false;
+		}
+
+		return leftRightTreesOK && currentTreeOK;
+	}
+}
+
+bool BST::isBST(){
+
+	return this->isBST(this->rootPtr);
+}
+
 void BST::empty( BSTNode *root ){
 
 	if( root == NULL ){ // already null, return back
