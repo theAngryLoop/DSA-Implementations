@@ -17,7 +17,7 @@ int main(){
 	b.insert(30);
 	b.insert(15);
 
-	cout << b.kthGreater(2) << endl;
+	cout << b.getHeight() << endl;
 
 	cin.ignore();
 }

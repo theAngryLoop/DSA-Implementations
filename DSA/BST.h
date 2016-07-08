@@ -11,6 +11,7 @@ class BST{
 	void insert( BSTNode**, int );
 	bool search( BSTNode*, int );
 	int kthGreater( BSTNode*, int );
+	int getHeight( BSTNode* );
 	void empty( BSTNode* );
 
 public:
@@ -19,5 +20,6 @@ public:
 	void insert( int );
 	bool search( int );
 	int kthGreater( int );
+	int getHeight();
 	~BST();
 };

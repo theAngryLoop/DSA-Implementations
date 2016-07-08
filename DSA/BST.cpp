@@ -115,6 +115,29 @@ int BST::kthGreater( int k ){
 	return this->kthGreater(this->rootPtr, k);
 }
 
+int BST::getHeight( BSTNode* node ){
+
+	int rightHeight, leftHeight;
+	rightHeight = leftHeight = 0;
+
+	if(node == NULL){ // empty tree or no tree
+
+		return -1;
+	}
+	else{ // not a leaf node yet
+
+		rightHeight = this->getHeight(node->right) + 1;
+		leftHeight = this->getHeight(node->left) + 1;
+
+		return ((rightHeight > leftHeight)?rightHeight:leftHeight);
+	}
+}
+
+int BST::getHeight(){
+
+	return this->getHeight(this->rootPtr);
+}
+
 void BST::empty( BSTNode *root ){
 
 	if( root == NULL ){ // already null, return back
