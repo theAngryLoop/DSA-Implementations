@@ -45,6 +45,63 @@ void BST::insert( int val ){
 	this->insert(&this->rootPtr, val);
 }
 
+void BST::remove( BSTNode** node, int val ){
+
+	if( *node == NULL ){ // not a node
+
+		return;
+	}
+	else if( (*node)->value > val ){ // find and remove in left subtree
+
+		this->remove( &(*node)->left, val );
+	}
+	else if( (*node)->value < val ){ // find and remove in right subtree
+
+		this->remove( &(*node)->right, val );
+	}
+	else{
+
+		if( (*node)->value == val ){
+
+			if( (*node)->left == NULL && (*node)->right == NULL ){ // is leaf node
+
+				delete *node;
+				*node = NULL;
+			}
+			else if( (*node)->left == NULL ){
+
+				BSTNode* temp = *node;
+				*node = (*node)->right;
+
+				delete temp;
+			}
+			else if( (*node)->right == NULL ){
+
+				BSTNode* temp = *node;
+				*node = (*node)->left;
+
+				delete temp;
+			}
+			else{ // none of left and right is null
+
+				// find 1st greater in left subtree
+				int leftGrtr = this->kthGreater((*node)->left, 1);
+
+				// replace current node's value with greater in its left
+				(*node)->value = leftGrtr;
+
+				// remove the duplicate in current node's left
+				this->remove(&(*node)->left, leftGrtr);
+			}
+		}
+	}
+}
+
+void BST::remove( int val ){
+
+	this->remove(&this->rootPtr, val);
+}
+
 bool BST::search( BSTNode *root, int val ){
 
 	if( root == NULL ){ // tree is empty

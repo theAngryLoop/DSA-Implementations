@@ -17,8 +17,11 @@ int main(){
 	b.insert(30);
 	b.insert(15);
 
-	if(b.isBST()) cout << "Is a Binary Search Tree";
-	else cout << "Not a Binary Search Tree";
+	b.printInOrder();
+
+	b.remove(22);
+
+	b.printInOrder();
 
 	cin.ignore();
 }

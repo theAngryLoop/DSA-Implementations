@@ -9,6 +9,7 @@ class BST{
 	// helpers
 	BSTNode* getNewNode( int );
 	void insert( BSTNode**, int );
+	void remove( BSTNode**, int );
 	bool search( BSTNode*, int );
 	int kthGreater( BSTNode*, int );
 	int getHeight( BSTNode* );
@@ -23,6 +24,7 @@ public:
 
 	BST();
 	void insert( int );
+	void remove( int );
 	bool search( int );
 	int kthGreater( int );
 	int getHeight();
