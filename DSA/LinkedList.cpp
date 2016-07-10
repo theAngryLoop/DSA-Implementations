@@ -77,6 +77,40 @@ void LinkedList::insertAt( int val, int k ){
 	}
 }
 
+void LinkedList::remove( int val ){
+
+	if( this->head == NULL ){ // empty list
+
+		return;
+	}
+	else if( this->head->value == val ){ // remove from head or only one element in list and is matched
+
+		LinkedListNode* toRemove = this->head;
+		this->head = this->head->next;
+
+		delete toRemove;
+		toRemove = NULL;
+	}
+	else{
+
+		LinkedListNode* tempPtr = this->head;
+
+		while( tempPtr->next != NULL && tempPtr->next->value != val ){
+
+			tempPtr = tempPtr->next;
+		}
+
+		if( tempPtr->next != NULL ){ // have found the node
+
+			LinkedListNode* toRemove = tempPtr->next;
+			tempPtr->next = toRemove->next;
+
+			delete toRemove;
+			toRemove = NULL;
+		}
+	}
+}
+
 void LinkedList::print(){
 
 	LinkedListNode* tempPtr = this->head;

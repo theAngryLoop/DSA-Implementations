@@ -20,7 +20,7 @@ int main(){
 
 	cout << endl;
 
-	l.insertAt( 55, 5 );
+	l.remove(11);
 
 	l.print();
 
