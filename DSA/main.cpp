@@ -1,27 +1,28 @@
 #include <iostream>
-#include "BST.h"
+#include "LinkedList.h"
 
 using namespace std;
 
 int main(){
 
-	BST b;
+	LinkedList l;
 
-	b.insert(22);
-	b.insert(33);
-	b.insert(11);
-	b.insert(21);
-	b.insert(31);
-	b.insert(9);
-	b.insert(40);
-	b.insert(30);
-	b.insert(15);
+	l.insert(1);
+	l.insert(13);
+	l.insert(8);
+	l.insert(11);
+	l.insert(12);
+	l.insert(4);
+	l.insert(2);
+	l.insert(9);
 
-	b.printInOrder();
+	l.print();
 
-	b.remove(22);
+	cout << endl;
 
-	b.printInOrder();
+	l.insertAt( 55, 5 );
+
+	l.print();
 
 	cin.ignore();
 }

@@ -7,7 +7,7 @@ class BST{
 	BSTNode *rootPtr;
 
 	// helpers
-	BSTNode* getNewNode( int );
+	BSTNode* getNewBSTNode( int );
 	void insert( BSTNode**, int );
 	void remove( BSTNode**, int );
 	bool search( BSTNode*, int );

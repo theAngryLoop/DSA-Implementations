@@ -10,7 +10,7 @@ BST::BST(){
 	this->rootPtr = NULL;
 }
 
-BSTNode* BST::getNewNode( int val ){
+BSTNode* BST::getNewBSTNode( int val ){
 
 	// create new BSTNode on heap memory
 	BSTNode *newNode = new BSTNode();
@@ -27,7 +27,7 @@ void BST::insert( BSTNode** root, int val ){
 
 	if( *root == NULL ){ // current node is NULL, insert here
 
-		*root = this->getNewNode(val);
+		*root = this->getNewBSTNode(val);
 	}
 	else if( (*root)->value > val ){ // new value is less or equal to current node's value, go left
 

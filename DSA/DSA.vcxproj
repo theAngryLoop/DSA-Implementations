@@ -78,9 +78,12 @@
   <ItemGroup>
     <ClInclude Include="BST.h" />
     <ClInclude Include="BSTNode.h" />
+    <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="LinkedListNode.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BST.cpp" />
+    <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
