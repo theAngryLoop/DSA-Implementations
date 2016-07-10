@@ -16,6 +16,7 @@ public:
 	void insertBeginning( int );
 	void insertAt( int, int );
 	void remove( int );
+	void removeAt( int );
 	void print();
 	~LinkedList();
 };

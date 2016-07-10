@@ -111,6 +111,42 @@ void LinkedList::remove( int val ){
 	}
 }
 
+void LinkedList::removeAt( int k ){
+
+	if( k < 1 || this->head == NULL){ // invalid index or empty list
+
+		return;
+	}
+	else if( k == 1 ){ // remove 1st element
+
+		LinkedListNode* toRemove = this->head;
+		this->head = this->head->next;
+
+		delete toRemove;
+		toRemove = NULL;
+	}
+	else{
+
+		int count = 1;
+		LinkedListNode* tempPtr = this->head;
+
+		while( tempPtr->next != NULL && count < (k-1) ){
+
+			tempPtr = tempPtr->next;
+			++count;
+		}
+
+		if( count == (k-1) && tempPtr->next != NULL ){ // got ya
+
+			LinkedListNode* toRemove = tempPtr->next;
+			tempPtr->next = toRemove->next;
+
+			delete toRemove;
+			toRemove = NULL;
+		}
+	}
+}
+
 void LinkedList::print(){
 
 	LinkedListNode* tempPtr = this->head;
